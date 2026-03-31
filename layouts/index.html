@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="hero">
+    <p class="eyebrow">Hugo + GitHub Pages</p>
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Site.Params.description }}</p>
+    <a class="button" href="{{ "/posts/" | relURL }}">Read posts</a>
+  </section>
+
+  <section>
+    <h2>Latest posts</h2>
+    <div class="post-list">
+      {{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+        <article class="post-card">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} · {{ .ReadingTime }} min read{{ end }}</p>
+          {{ with .Description }}
+            <p>{{ . }}</p>
+          {{ else }}
+            <p>{{ .Summary }}</p>
+          {{ end }}
+        </article>
+      {{ else }}
+        <p>No posts yet — create one with <code>./scripts/new-post.sh "My first post"</code>.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

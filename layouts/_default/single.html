@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article class="post-single">
+    <header>
+      <p class="eyebrow">{{ .Section | title }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} · {{ .ReadingTime }} min read{{ end }}</p>
+    </header>
+
+    <div class="content">{{ .Content }}</div>
+
+    {{ with .Params.tags }}
+      <ul class="tags">
+        {{ range . }}
+          <li>#{{ . }}</li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </article>
+{{ end }}
