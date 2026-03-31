@@ -1,9 +1,13 @@
 {{ define "main" }}
   <article class="post-single">
-    <header>
+    <header class="post-single-header">
+      <a class="back-link" href="{{ "/posts/" | relURL }}">Back to posts</a>
       <p class="eyebrow">{{ .Section | title }}</p>
-      <h1>{{ .Title }}</h1>
-      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} · {{ .ReadingTime }} min read{{ end }}</p>
+      <h1>{{ partial "page-title.html" . }}</h1>
+      <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>
+      {{ with .Description }}
+        <p class="post-dek">{{ . }}</p>
+      {{ end }}
     </header>
 
     <div class="content">{{ .Content }}</div>

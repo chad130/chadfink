@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {{ $pageTitle := .Title }}
+    {{ if and (not $pageTitle) .File }}
+      {{ $pageTitle = partial "page-title.html" . }}
+    {{ end }}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
       {{- if .IsHome -}}
         {{ .Site.Title }}
       {{- else -}}
-        {{ .Title }} · {{ .Site.Title }}
+        {{ $pageTitle }} &middot; {{ .Site.Title }}
       {{- end -}}
     </title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
     {{ partial "head.html" . }}
   </head>
-  <body>
+  <body class="page-{{ .Kind }}{{ if .IsHome }} is-home{{ end }}">
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
@@ -25,12 +29,12 @@
       </div>
     </header>
 
-    <main class="container">
+    <main class="container site-main">
       {{ block "main" . }}{{ end }}
     </main>
 
     <footer class="container site-footer">
-      <p>© {{ now.Year }} {{ .Site.Params.author }} · Built with Hugo</p>
+      <p>&copy; {{ now.Year }} {{ .Site.Params.author }} &middot; Built with Hugo</p>
     </footer>
   </body>
 </html>

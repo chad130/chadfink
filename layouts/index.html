@@ -1,26 +1,53 @@
 {{ define "main" }}
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ $latest := false }}
+  {{ if gt (len $posts) 0 }}
+    {{ $latest = index $posts 0 }}
+  {{ end }}
+
   <section class="hero">
-    <p class="eyebrow">Hugo + GitHub Pages</p>
-    <h1>{{ .Site.Title }}</h1>
-    <p>{{ .Site.Params.description }}</p>
-    <a class="button" href="{{ "/posts/" | relURL }}">Read posts</a>
+    <div class="hero-copy">
+      <p class="eyebrow">Independent Writing</p>
+      <h1>{{ .Site.Title }}</h1>
+      <p class="hero-text">{{ .Site.Params.description }}</p>
+      <div class="hero-actions">
+        <a class="button" href="{{ "/posts/" | relURL }}">Browse posts</a>
+        {{ with $latest }}
+          <a class="button button-secondary" href="{{ .RelPermalink }}">Open latest</a>
+        {{ end }}
+      </div>
+    </div>
+
+    <aside class="hero-panel">
+      <p class="panel-label">Latest entry</p>
+      {{ with $latest }}
+        <a class="panel-link" href="{{ .RelPermalink }}">{{ partial "page-title.html" . }}</a>
+        <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>
+        {{ with .Description }}
+          <p>{{ . }}</p>
+        {{ else }}
+          <p>{{ .Summary | plainify | truncate 170 }}</p>
+        {{ end }}
+      {{ else }}
+        <p>No posts published yet.</p>
+      {{ end }}
+    </aside>
+  </section>
+
+  <section class="section-heading">
+    <div>
+      <p class="eyebrow">Journal</p>
+      <h2>Latest posts</h2>
+    </div>
   </section>
 
   <section>
     <h2>Latest posts</h2>
     <div class="post-list">
-      {{ range first 6 (where .Site.RegularPages "Section" "posts") }}
-        <article class="post-card">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} · {{ .ReadingTime }} min read{{ end }}</p>
-          {{ with .Description }}
-            <p>{{ . }}</p>
-          {{ else }}
-            <p>{{ .Summary }}</p>
-          {{ end }}
-        </article>
+      {{ range first 6 $posts }}
+        {{ partial "post-card.html" . }}
       {{ else }}
-        <p>No posts yet — create one with <code>./scripts/new-post.sh "My first post"</code>.</p>
+        <p>No posts yet - create one with <code>./scripts/new-post.sh "My first post"</code>.</p>
       {{ end }}
     </div>
   </section>

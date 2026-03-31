@@ -7,13 +7,12 @@ enableRobotsTXT = true
   pagerSize = 8
 
 [permalinks]
-  posts = "/posts/:slug/"
+  posts = "/posts/:slugorcontentbasename/"
 
 [params]
   description = "A fast, simple, modern blog built with Hugo."
   author = "Chad Fink"
   showReadingTime = true
-
 
 [frontmatter]
   date = ["date", "publishDate", "lastmod", ":filename", ":fileModTime"]

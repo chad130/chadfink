@@ -1,0 +1,22 @@
+{{ $title := .Title }}
+
+{{ if or (not $title) (eq $title "-") }}
+  {{ with findRE "(?m)^#\\s+(.+?)\\s*$" .RawContent 1 }}
+    {{ $title = index . 0 | replaceRE "(?m)^#\\s+" "" | plainify }}
+  {{ end }}
+{{ end }}
+
+{{ if or (not $title) (eq $title "-") }}
+  {{ with .File }}
+    {{ $baseName := replaceRE "\\.[^.]+$" "" .LogicalName }}
+    {{ if $baseName }}
+      {{ $title = replaceRE "[-_]+" " " $baseName }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if or (not $title) (eq $title "-") }}
+  {{ $title = "Untitled Post" }}
+{{ end }}
+
+{{ return $title }}
