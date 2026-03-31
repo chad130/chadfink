@@ -1,6 +1,6 @@
-baseURL = "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/"
+baseURL = "https://chad130.github.io/chadfink/"
 languageCode = "en-us"
-title = "My Blog"
+title = "Chad Fink's Blog"
 theme = ""
 enableRobotsTXT = true
 
@@ -12,7 +12,7 @@ enableRobotsTXT = true
 
 [params]
   description = "A fast, simple, modern blog built with Hugo."
-  author = "Your Name"
+  author = "Chad Fink"
   showReadingTime = true
 
 
