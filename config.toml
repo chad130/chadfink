@@ -1,0 +1,41 @@
+baseURL = "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/"
+languageCode = "en-us"
+title = "My Blog"
+theme = ""
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 8
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[params]
+  description = "A fast, simple, modern blog built with Hugo."
+  author = "Your Name"
+  showReadingTime = true
+
+
+[frontmatter]
+  date = ["date", "publishDate", "lastmod", ":filename", ":fileModTime"]
+  lastmod = ["lastmod", "date", ":fileModTime"]
+  publishDate = ["publishDate", "date", ":fileModTime"]
+  expiryDate = ["expiryDate"]
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
