@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Chad Fink&#39;s Blog</title>
+    <link>http://localhost:1313/chadfink/posts/</link>
+    <description>Recent content in Posts on Chad Fink&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/chadfink/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome</title>
+      <link>http://localhost:1313/chadfink/posts/welcome/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chadfink/posts/welcome/</guid>
+      <description>&lt;p&gt;This blog is ready to publish.&lt;/p&gt;&#xA;&lt;p&gt;Create your next post with:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./scripts/new-post.sh &lt;span class=&#34;s2&#34;&gt;&amp;#34;Your post title&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When it&amp;rsquo;s ready, set &lt;code&gt;draft: false&lt;/code&gt; and push to GitHub.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

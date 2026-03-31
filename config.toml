@@ -1,7 +1,6 @@
 baseURL = "https://chad130.github.io/chadfink/"
 languageCode = "en-us"
 title = "Chad Fink's Blog"
-theme = ""
 enableRobotsTXT = true
 
 [pagination]
