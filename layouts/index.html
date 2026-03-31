@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ $postsPage := site.GetPage "section" "posts" }}
   {{ $latest := false }}
   {{ if gt (len $posts) 0 }}
     {{ $latest = index $posts 0 }}
@@ -7,19 +8,21 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Independent Writing</p>
+      <p class="eyebrow">Essays, notes, and research</p>
       <h1>{{ .Site.Title }}</h1>
       <p class="hero-text">{{ .Site.Params.description }}</p>
       <div class="hero-actions">
-        <a class="button" href="{{ "/posts/" | relURL }}">Browse posts</a>
+        {{ with $postsPage }}
+          <a class="button" href="{{ .RelPermalink }}">View archive</a>
+        {{ end }}
         {{ with $latest }}
-          <a class="button button-secondary" href="{{ .RelPermalink }}">Open latest</a>
+          <a class="button button-secondary" href="{{ .RelPermalink }}">Read latest</a>
         {{ end }}
       </div>
     </div>
 
     <aside class="hero-panel">
-      <p class="panel-label">Latest entry</p>
+      <p class="panel-label">Most recent</p>
       {{ with $latest }}
         <a class="panel-link" href="{{ .RelPermalink }}">{{ partial "page-title.html" . }}</a>
         <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>
@@ -36,7 +39,7 @@
 
   <section class="section-heading">
     <div>
-      <p class="eyebrow">Journal</p>
+      <p class="eyebrow">Recent writing</p>
       <h2>Latest posts</h2>
     </div>
   </section>

@@ -1,7 +1,10 @@
 {{ define "main" }}
+  {{ $postsPage := site.GetPage "section" "posts" }}
   <article class="post-single">
     <header class="post-single-header">
-      <a class="back-link" href="{{ "/posts/" | relURL }}">Back to posts</a>
+      {{ with $postsPage }}
+        <a class="back-link" href="{{ .RelPermalink }}">All posts</a>
+      {{ end }}
       <p class="eyebrow">{{ .Section | title }}</p>
       <h1>{{ partial "page-title.html" . }}</h1>
       <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>

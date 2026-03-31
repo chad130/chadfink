@@ -7,13 +7,12 @@
 {{ end }}
 
 <article class="post-card">
-  <a class="post-card-hitarea" href="{{ .RelPermalink }}" aria-label="Read {{ $title }}"></a>
-  <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>
-  <h3 class="post-card-title">
-    <a href="{{ .RelPermalink }}">{{ $title }}</a>
-  </h3>
-  {{ with $summary }}<p class="post-card-summary">{{ . }}</p>{{ end }}
-  <div class="post-card-footer">
-    <span>Read article</span>
-  </div>
+  <a class="post-card-link" href="{{ .RelPermalink }}">
+    <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ if .Site.Params.showReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}</p>
+    <h3 class="post-card-title">{{ $title }}</h3>
+    {{ with $summary }}<p class="post-card-summary">{{ . }}</p>{{ end }}
+    <div class="post-card-footer">
+      <span>Continue reading</span>
+    </div>
+  </a>
 </article>
