@@ -25,6 +25,10 @@ enableRobotsTXT = true
     style = "github"
     noClasses = false
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
     [markup.goldmark.renderer]
       unsafe = true
 

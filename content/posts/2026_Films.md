@@ -19,7 +19,7 @@
 18. The Secret Agent (2025) ★★★☆ > Brazilian. Very long. Hard to follow. High quality perfs, interactions, chars. Subs were translated badly (confirmed). Would like to watch again with better translation.
 19. ~~The Rip (2026) ★★☆☆ > Pretty bad. Couldn't even watch with food. Story is too dumb. Chars are braindead.~~
 20. ==The Godfather (1972) ★★★★ > Incredible story, chars, interactions, dialogue, perfs. About as close to perfection as you can get. Captures emotions with subtlety. Unfolding story perfectly paced building tension at the right moments.== 
-21. ==The Godfather 2 (1974) ★★★★ > Great. Not as good as the first one, but still phenomenal. ==
+21. ==The Godfather 2 (1974) ★★★★ > Great. Not as good as the first one, but still phenomenal.==
 22. ~~The Things You Kill (2025) ★★☆☆ > Turkish. end at 20m. Nothing to keep me interested. Just don't care.~~
 23. ==Donnie Darko (2001) ★★★★ > Still awesome. So weird so fun. The perfect cult classic. Unique story, masterfully unfolded. Weird chars, great interactions.==
 24. ~~Rental Family (2025) ★★☆☆ > end at 1 hr. Nothing to say. Bored. Mediocre~~

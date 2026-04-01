@@ -37,6 +37,13 @@ a {
   color: inherit;
 }
 
+mark {
+  padding: 0.04em 0.2em;
+  border-radius: 0.2em;
+  background: rgba(109, 79, 54, 0.16);
+  color: inherit;
+}
+
 .container {
   width: min(1080px, calc(100% - 2rem));
   margin: 0 auto;
